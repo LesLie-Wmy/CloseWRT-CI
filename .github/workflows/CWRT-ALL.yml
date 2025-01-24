@@ -40,17 +40,17 @@ jobs:
         with:
           gh_token: ${{secrets.GITHUB_TOKEN}}
           delete_releases: true
-          releases_keep_latest: 0
+          releases_keep_latest: 6
           delete_tags: true
           delete_workflows: true
-          workflows_keep_day: 0
+          workflows_keep_day: 6
 
   config:
     needs: cleanup
     name: ${{matrix.TARGET}}
     strategy:
       fail-fast: false
-      max-parallel: 3
+      max-parallel: 6
       matrix:
         TARGET: [MTK-7981, MTK-7986]
         REPO_INFO:
