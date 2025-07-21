@@ -85,3 +85,12 @@ if [ -f "$DM_FILE" ]; then
 
 	cd $PKG_PATH && echo "diskman has been fixed!"
 fi
+
+#修复Frpc配置文件
+FRPC_DIR=$(find ../feeds/luci/ -maxdepth 3 -type d -wholename "*/applications/luci-app-frpc")
+if [ -d "$FRPC_DIR" ]; then
+	FRPC_PATH="$FRPC_DIR/htdocs/luci-static/resources/view/frpc.js"
+	sed -i "s|'tcp', 'kcp', 'websocket'|'tcp', 'kcp', 'websocket', 'quic'|g" $FRPC_PATH
+
+	cd $PKG_PATH && echo "luci-app-frpc has been fixed!"
+fi
