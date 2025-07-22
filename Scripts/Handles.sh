@@ -86,6 +86,7 @@ if [ -f "$DM_FILE" ]; then
 	cd $PKG_PATH && echo "diskman has been fixed!"
 fi
 
-#Update golang to 1.23
+#Update golang to 1.24
+echo "UPDATE golang to 1.24"
 rm -rf ../feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x ../feeds/packages/lang/golang
