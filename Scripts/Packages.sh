@@ -123,3 +123,6 @@ find ./ | grep Makefile | grep mosdns | xargs rm -f
 
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 mosdns
 git clone https://github.com/sbwml/v2ray-geodata v2ray-geodata
+
+find ./ | grep Makefile | grep eqosplus | xargs rm -f
+git clone https://github.com/sirpdboy/luci-app-eqosplus luci-app-eqosplus
